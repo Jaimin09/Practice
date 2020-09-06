@@ -41,13 +41,18 @@ def get_company_details_and_rating(url):
     rating = content.find("table", attrs = {"class" : "mctable1"}).find_all("td")
     
     info = content.find("div", attrs = {"class":"morepls_cnt"}).string
-
+    
+    lst_price = content.find("tbody", attrs = {"id" : "BSE_history_tbody"}).find_all("td")
+    
+    # [last year price, current price, gain]
+    last_yr_info = [lst_price[5].string, lst_price[6].string, lst_price[7].string]
+    
     if(rating[0].string != 'Moving Averages'):
         rat_val = "Rating Not found"
     else:
         rat_val = rating[1].string
         
-    return rat_val, info
+    return rat_val, info, last_yr_info
 
 
 def get_score(url):

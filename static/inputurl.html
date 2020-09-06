@@ -1,14 +1,42 @@
+
 <html>
 <head>
 	<title>
 		Input url
 	</title>
+	<style>
+			.Inp{
+	margin:10px;
+}
+.btn {
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.message {
+  background-color: #5dca88;
+  cursor: pointer;
+}
+.message:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
+}
+	</style>
 </head>
-<body>
+<body style="font-style: sans-sherif;">
+
+	<header bgcolor="blue"style="background-color:darkblue;text-align: center;color: white;height: 80px;font-size: 40px;padding-top: 20px">
+		<div>
+			The Stock Analyser
+		</div>
+	</header>
+	<div style="text-align: center;padding-top: 10%;font-size: 30px">
 	<form action="http://127.0.0.1:5000/inputurl" method="POST">
-		<label>Enter the url of the company: </label>
-		<input type="text" name="url">
-		<input type="submit" value="Submit">
+		<label>Input the company's URL here from moneycontrol.com </label><br>
+		<input class="Inp btn" type="text" name="url" style="height: 35px;width: 500px" ><br>
+		<input class="btn message" type="submit" value="Analyse" style="background-color:green;color:white;height: 35px;width: 150px;font-size: 25px">
 	</form>
+</div>
 </body>
 </html>

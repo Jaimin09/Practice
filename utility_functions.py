@@ -32,6 +32,24 @@ def get_point_value(arr, avg = False):
     return point
 
 
+def get_company_details_and_rating(url):
+    response = requests.get(url, timeout=240)
+    content = BeautifulSoup(response.content, 'html.parser')
+    
+    lst = []
+
+    rating = content.find("table", attrs = {"class" : "mctable1"}).find_all("td")
+    
+    info = content.find("div", attrs = {"class":"morepls_cnt"}).string
+
+    if(rating[0].string != 'Moving Averages'):
+        rat_val = "Rating Not found"
+    else:
+        rat_val = rating[1].string
+        
+    return rat_val, info
+
+
 def get_score(url):
     r, _, pl, pc, fi, _ = get_everything(url)
     p1 = get_point_value(pl[1:], avg = True)

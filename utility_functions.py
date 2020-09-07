@@ -57,6 +57,8 @@ def get_company_details_and_rating(url):
     info = content.find("div", attrs = {"class":"morepls_cnt"}).string
     
     lst_price = content.find("tbody", attrs = {"id" : "BSE_history_tbody"}).find_all("td")
+
+    cmp_name = content.find("h1").string
     
     # [last year price, current price, gain]
     last_yr_info = [lst_price[5].string, lst_price[6].string, lst_price[7].string]
@@ -66,7 +68,7 @@ def get_company_details_and_rating(url):
     else:
         rat_val = rating[1].string
         
-    return rat_val, info, last_yr_info
+    return cmp_name, rat_val, info, last_yr_info
 
 
 def get_everything(url):

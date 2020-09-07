@@ -36,7 +36,7 @@ Simple steps to generate the score of the company :
 #### Step 4 : Paste it on the stock buddy
 #### Step 5 : Get the Score !!!
 
-![demo](https://github.com/Jaimin09/Stock-Buddy/blob/master/Images/sbtut.gif?raw=true)
+![demo](https://github.com/Jaimin09/Practice/blob/master/Images/sbtut.gif?raw=true)
 
 ## Technologies Used :
 - Python, Flask

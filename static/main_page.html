@@ -1,8 +1,7 @@
-
 <html>
 <head>
 	<title>
-		Input url
+		Analyse Stock
 	</title>
 	<style>
 			.Inp{
@@ -24,19 +23,21 @@
 }
 	</style>
 </head>
-<body style="font-style: sans-sherif;">
+<body style="font-family : sans-serif ;">
 
-	<header bgcolor="blue"style="background-color:darkblue;text-align: center;color: white;height: 80px;font-size: 40px;padding-top: 20px">
-		<div>
-			The Stock Analyser
+	<header bgcolor="blue"style="background-color:darkblue;color: white;height: 80px;font-size: 40px;padding-top: 20px">
+		<div style = "padding-left : 75px; padding-top : 5px">
+            <b>Stock Buddy </b>
 		</div>
 	</header>
 	<div style="text-align: center;padding-top: 10%;font-size: 30px">
-	<form action="http://127.0.0.1:5000/inputurl" method="POST">
+    
+	<form action="http://127.0.0.1:5000/main_page" method="POST">
 		<label>Input the company's URL here from moneycontrol.com </label><br>
 		<input class="Inp btn" type="text" name="url" style="height: 35px;width: 500px" ><br>
 		<input class="btn message" type="submit" value="Analyse" style="background-color:green;color:white;height: 35px;width: 150px;font-size: 25px">
 	</form>
+    
 </div>
 </body>
 </html>

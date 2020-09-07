@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Analyse Stock</title>
+</head>
+<body style = "font-family: sans-serif;">
+	<style>
+		.table {
+ 		 border-collapse: collapse;
+ 		 border: 1px solid black;
+ 		 border-radius: 4px
+		}
+		.first{
+			border-collapse: collapse;
+ 		 border: 1px solid black;
+			height: 40px;
+			min-width: 400px;
+		}
+		.second{
+			border-collapse: collapse;
+ 		 border: 1px solid black;
+			height: 40px;
+			min-width: 200px;
+		}
+	</style>
+	<header bgcolor="blue"style="background-color:darkblue;color: white;height: 80px;font-size: 40px;padding-top: 20px">
+<div style = "padding-left : 75px; padding-top : 5px">
+			<b>Stock Buddy</b>
+		</div>
+	</header>
+    
+    <h2 align="center" style="font-size: 40px">{{ cmp_name }}</h2>
+    <hr>
+    
+	<h3 align="center" style="font-size: 30px">The score for this stock is :<br>
+	<table align="center" style="background-color: {{clr}} ;color: white;border-radius: 4px;height: 60px;width: 140px;text-align: center;font-size: 40px"><tr><td>{{ score }}</td></tr></table></h3><br>    
+	<table align="center" style="border-radius: 4px;height: 35px;width: 70px;text-align: center;font-size: 25px;" class="table">
+    <tr><td class="first">Last Year price </td><td class="second"> {{ ls_price }}</td> </tr>
+    <tr><td class="first">Current price </td><td class="second"> {{ curr_price }} </td></tr>
+    <tr><td class="first">Gain from last year </td><td class="second">{{ gain }}</td></tr>
+</table>
+<br>
+<p style="text-align: center;font-size: 30px;">Current Monthly Trend for this Stock is: <span style="background-color: green;color: white;border-radius: 4px;padding: 8px">{{ rating }}</span></p>
+    <hr>
+    <br>
+    <span style="font-size: 21px;">{{ info }}</span>
+</body>
+</html>

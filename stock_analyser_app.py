@@ -18,9 +18,9 @@ def inputurl():
             curr_price = lst_yr_info[1]
             gain = lst_yr_info[2]
 
-            if(score > 300):
+            if(score > 65):
                 clr = 'green'
-            elif(score < 300 and score > 0):
+            elif(score < 65 and score > 50):
                 clr = '#ffc40c'
             else:
                 clr = 'red'

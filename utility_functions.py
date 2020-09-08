@@ -6,6 +6,10 @@ from fastnumbers import fast_float, isfloat
 import requests
 
 
+def sigmoid(x):
+    return 1/(1 + np.exp(-x))
+
+
 def get_diff_list(arr):
     lst = []
     for i in range(len(arr)-1):
@@ -33,17 +37,49 @@ def get_point_value(arr, avg = False):
     return point
 
 
+def get_peer_comparison_score(pc):
+    mrk = []
+    prf = []
+    mrk_to_prf = []
+    
+    mrk_val = fast_float(pc[5].replace(',',''))
+    prf_val = fast_float(pc[7].replace(',',''))
+    
+    for i in range(8, len(pc), 8):
+        mrk.append(fast_float(pc[i+5].replace(',','')))
+        prf.append(fast_float(pc[i+7].replace(',','')))
+  
+    for i in prf:
+        if(i < 0):
+            return 0.8
+        
+    for i in mrk:
+        if(i < mrk_val):
+            return 0.8
+
+    for i, j in zip(mrk, prf):
+        mrk_to_prf.append((i/mrk_val)/(j/prf_val))
+        
+    return np.average(mrk_to_prf)
+
+
 def get_score(url):
     r, _, pl, pc, fi, _ = get_everything(url)
     p1 = get_point_value(pl[1:], avg = True)
     p2 = get_point_value(fi[1:], avg = False)
     p3 = get_point_value(r[1:], avg = True)
+    p4 = get_peer_comparison_score(pc)
+    p5 = fast_float(fi[1].replace(',',''))/10
     
-    p1 = round(p1, 4)
-    p2 = round(p2, 4)
-    p3 = round(p3, 4)
+    p1 = sigmoid(p1)
+    p2 = sigmoid(p2)
+    p3 = sigmoid(p3)
+    p4 = sigmoid(p4)
+    p5 = sigmoid(p5)
     
-    return int((p1 + p2 + p3)*100)
+    score = (p1 + p2 + p3 + p4 + p5)*20
+    
+    return int(round(score, 0))
 
 
 def get_company_details_and_rating(url):

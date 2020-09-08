@@ -37,7 +37,7 @@ Simple steps to generate the score of the company :
 #### Step 5 : Get the Score !!!
 
 ![demo](https://github.com/Jaimin09/Practice/blob/master/Images/sbtut.gif?raw=true)
-![demo](https://github.com/Jaimin09/Practice/blob/master/Images/score%20indicator.png?raw=true)
+![demo](https://github.com/Jaimin09/Practice/blob/master/Images/Score%20Indicator.png?raw=true)
 
 
 ## Technologies Used :

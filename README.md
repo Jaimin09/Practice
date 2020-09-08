@@ -37,7 +37,12 @@ Simple steps to generate the score of the company :
 #### Step 5 : Get the Score !!!
 
 ![demo](https://github.com/Jaimin09/Practice/blob/master/Images/sbtut.gif?raw=true)
-<img src="https://github.com/Jaimin09/Practice/blob/master/Images/Score%20Indicator.png?raw=true" width="700" />
+
+
+
+
+
+<img src="https://github.com/Jaimin09/Practice/blob/master/Images/Score%20Indicator.png?raw=true" width="650" />
 
 ## Technologies Used :
 - Python, Flask
